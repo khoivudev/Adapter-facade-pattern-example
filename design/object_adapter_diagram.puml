@@ -1,0 +1,28 @@
+@startuml
+class PX4Vehicle {
+    px4_arm()
+    px4_disarm()
+    px4_takeOff()
+    px4_returnHome()
+}
+
+
+interface Vehicle {
+    arm()
+    disarm()
+    takeOff()
+    returnHome()
+} 
+
+class PX4Adapter implements Vehicle {
+    PX4Vehicle
+
+    arm()
+    disarm()
+    takeOff()
+    returnHome()
+}
+
+PX4Adapter -right-> PX4Vehicle
+Client -right-> Vehicle
+@enduml
