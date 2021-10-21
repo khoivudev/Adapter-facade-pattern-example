@@ -52,3 +52,6 @@ Vehicle px4Vehicle = new PX4FAdapter();
 
 ##### Class Diagram
 ![alt_image](/design/class_adapter_diagram.png)
+
+
+### Home Sweet Home Theater 
