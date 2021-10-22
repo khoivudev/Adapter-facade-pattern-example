@@ -1,0 +1,120 @@
+@startuml
+
+class HomeTheaterFacade {
+    amplifier
+    tuner
+    dvdPlayer
+    cdPlayer
+    projector
+    theaterLights
+    screen
+    popcornPopper
+
+    watchMovie()
+    endMovie()
+    listenToCD()
+    endCD()
+    listenToRadio()
+    endRadio()
+}
+
+package Components {
+    class Amplifier {
+        tuner 
+        dvdPlayer 
+        cdPlayer 
+
+        on()
+        off()
+        setCD()
+        setDVD()
+        setStereoSound()
+        setSurroundSound()
+        setTuner()
+        setVolume()
+        toString()
+    }
+
+    class Tuner {
+        amplifier
+        om()
+        off()
+        setAm()
+        setFm()
+        setFrequency()
+        toString()
+    }
+
+    class CdPlayer {
+        amplifier 
+
+        on()
+        off()
+        eject()
+        pause()
+        play()
+        stop()
+        toString()
+    }
+
+    class Screen {
+        up()
+        down()
+        toString()
+    }
+
+    class PopcornPopper {
+        on()
+        off()
+        toString()
+    }
+
+    class TheaterLights {
+        on()
+        off()
+        dim()
+        toString()
+    }
+
+    class Projector {
+        dvdPlayer 
+
+        on()
+        off()
+        tvMode()
+        wideScreenMode()
+        toString()
+    }
+
+    class DvdPlayer {
+        amplifier
+
+        on()
+        off()
+        eject()
+        pause()
+        play()
+        setSurroundAudio()
+        setTwoChannelAudio()
+        stop()
+        toString()
+    }
+}
+
+DvdPlayer         --> Amplifier
+Amplifier         --> DvdPlayer
+Projector         --> DvdPlayer
+CdPlayer          --> Amplifier 
+Amplifier         --> CdPlayer 
+Amplifier         --> Tuner 
+Tuner             --> Amplifier
+HomeTheaterFacade --> Amplifier
+HomeTheaterFacade --> Tuner
+HomeTheaterFacade --> DvdPlayer
+HomeTheaterFacade --> CdPlayer
+HomeTheaterFacade --> Projector
+HomeTheaterFacade --> TheaterLights
+HomeTheaterFacade --> Screen
+HomeTheaterFacade --> PopcornPopper
+
+@enduml

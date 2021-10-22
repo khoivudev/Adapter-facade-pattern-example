@@ -1,4 +1,4 @@
-### Adapter facade pattern concepts
+### Adapter pattern concepts
 * The client makes a request to the adapter by calling a method on it using the [target interface].
 * The adapter translates the request into one or more calls on the adaptee using the [adaptee interface].
 * The client receives the results of the call and never knows there is an adapter doing the translation.
@@ -54,4 +54,12 @@ Vehicle px4Vehicle = new PX4FAdapter();
 ![alt_image](/design/class_adapter_diagram.png)
 
 
+### Facade pattern concepts
+* Facades and adapters may wrap multiple classes
+* A facade’s intent is to simplify
+* An adapter’s is to convert the interface to something different.
+
 ### Home Sweet Home Theater 
+
+##### Class Diagram
+![alt_image](/design/facade_class_diagram.png)
